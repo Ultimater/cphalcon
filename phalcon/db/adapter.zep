@@ -40,8 +40,10 @@ abstract class Adapter implements EventsAwareInterface
 
 	/**
 	 * Descriptor used to connect to a database
+	 * we want to hide database information from print_r
+	 * use the protected getDescriptor method for accessing it.
 	 */
-	protected _descriptor = [];
+	private _descriptor = [];
 
 	/**
 	 * Name of the dialect used
@@ -132,6 +134,23 @@ abstract class Adapter implements EventsAwareInterface
 
 		let this->_descriptor = descriptor;
 	}
+	
+	/**
+	 * Gets the descriptor
+	 */	
+        protected getDescriptor() -> array
+        {
+                return this->_descriptor;
+        }
+
+	/**
+	 * Sets the descriptor
+	 */
+        protected setDescriptor(array! descriptor)
+        {
+		let this->_descriptor = descriptor;
+        }
+        
 
 	/**
 	 * Sets the event manager
