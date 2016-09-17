@@ -96,7 +96,7 @@ abstract class Pdo extends Adapter
 			persistent, options, key, value;
 
 		if empty descriptor {
-			let descriptor = (array) this->_descriptor;
+			let descriptor = (array) this->getDescriptor();
 		}
 
 		/**
