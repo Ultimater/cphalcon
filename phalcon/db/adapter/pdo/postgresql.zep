@@ -62,7 +62,7 @@ class Postgresql extends PdoAdapter implements AdapterInterface
 		var schema, sql, status;
 
 		if empty descriptor {
-			let descriptor = (array) this->_descriptor;
+			let descriptor = (array) this->getDescriptor();
 		}
 
 		if fetch schema, descriptor["schema"] {
