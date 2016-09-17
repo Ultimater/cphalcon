@@ -58,7 +58,7 @@ class Sqlite extends PdoAdapter implements AdapterInterface
 		var dbname;
 
 		if empty descriptor {
-			let descriptor = (array) this->_descriptor;
+			let descriptor = (array) this->getDescriptor();
 		}
 
 		if !fetch dbname, descriptor["dbname"] {
